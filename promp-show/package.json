@@ -1,0 +1,20 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node src/main.ts",
+    "start": "ts-node dist/main.js",
+    "build": "tsc -p ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "file-system": "^1.2.2",
+    "prompts": "^2.4.2",
+    "typescript": "^4.5.3"
+  }
+}
