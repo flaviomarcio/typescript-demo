@@ -1,3 +1,5 @@
+//reference
+//https://www.npmjs.com/package/prompts
 async function showOption(){
     const prompts = require('prompts');
     const response = await prompts({
