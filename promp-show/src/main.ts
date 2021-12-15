@@ -12,6 +12,18 @@ async function showSinglePrompt(){
     console.log(`Olá ${response.value}`);
 };
 
+async function showPasswordPrompt(){
+    //Prompt with a single password prompt object. Returns an object with the response.
+    const prompts = require('prompts');
+    const response = await prompts({
+        type: 'password',
+        name: 'value',
+        message: 'Enter password?',
+        validate: value => value!==''
+    });    
+    console.log(`Olá ${response.value}`);
+};
+
 async function showPromptChain(){
     //Prompt with a list of prompt objects. Returns an object with the responses. Make sure to give each prompt a unique name property to prevent overwriting values.
     const prompts = require('prompts');
