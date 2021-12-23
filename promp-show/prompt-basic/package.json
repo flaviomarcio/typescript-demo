@@ -1,7 +1,7 @@
 {
   "name": "src",
   "version": "1.0.0",
-  "description": "",
+  "description": "apt install npm;",
   "main": "index.js",
   "scripts": {
     "dev": "ts-node src/main.ts",

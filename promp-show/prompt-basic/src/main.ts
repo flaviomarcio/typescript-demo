@@ -1,8 +1,8 @@
-//reference
-//https://www.npmjs.com/package/prompts
+const prompts = require('prompts');
+
 async function showSinglePrompt(){
     //Prompt with a single prompt object. Returns an object with the response.
-    const prompts = require('prompts');
+    //const prompts = require('prompts');
     const response = await prompts({
         type: 'text',
         name: 'value',
@@ -14,19 +14,19 @@ async function showSinglePrompt(){
 
 async function showPasswordPrompt(){
     //Prompt with a single password prompt object. Returns an object with the response.
-    const prompts = require('prompts');
+    //const prompts = require('prompts');
     const response = await prompts({
         type: 'password',
         name: 'value',
         message: 'Enter password?',
         validate: value => value!==''
-    });    
+    })
     console.log(`Olá ${response.value}`);
 };
 
 async function showPromptChain(){
     //Prompt with a list of prompt objects. Returns an object with the responses. Make sure to give each prompt a unique name property to prevent overwriting values.
-    const prompts = require('prompts');
+    //const prompts = require('prompts');
     const questions = [
     {
         type: 'text',
@@ -47,15 +47,15 @@ async function showPromptChain(){
     ];
 
     (async () => {
-    const response = await prompts(questions);
-
-    // => response => { username, age, about }
-    })();
+        const response = await prompts(questions).then(answers => {
+            console.info('Response:', answers.value);
+          });
+        })();
 }
 
 async function showDynamicPrompts(){
     //Prompt properties can be functions too. Prompt Objects with type set to falsy values are skipped.
-    const prompts = require('prompts');
+    //const prompts = require('prompts');
     const questions = [
         {
             type: 'text',
@@ -70,12 +70,15 @@ async function showDynamicPrompts(){
     ];
 
     (async () => {
-    const response = await prompts(questions);
+    const response = await prompts(questions).then(answers => {
+        console.info('Response:', answers.value);
+      });
     })();
 }
 
-async function start(){
-    showSinglePrompt();
+
+function start(){
+  showDynamicPrompts();
 }
 
 start();
