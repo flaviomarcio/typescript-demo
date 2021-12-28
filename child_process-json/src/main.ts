@@ -64,10 +64,10 @@ function call_spawnSync(){
 
 
 function start(){
-    // call_exec()
-    // console.log(call_execSync());
-    // call_spawn()
-    console.log(call_spawnSync());    
+    call_exec()
+    console.log(call_execSync());
+    call_spawn()
+    //console.log(call_spawnSync());    
 }
 
 start();
