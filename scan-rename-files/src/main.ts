@@ -5,11 +5,11 @@ const fs = require('file-system');
 const prompts = require('prompts');
 
 
-var staticInitialDir:String;
-var staticInitialExtension:String='*.*';
-var staticInitialTextReplace:String;
-var staticInitialTextNew:String;
-var staticInitialMode:Number;
+var staticInitialDir='';
+var staticInitialExtension='*.*';
+var staticInitialTextReplace='';
+var staticInitialTextNew='';
+var staticInitialMode='';
 
 async function renameFiles(path, ext, textReplace, textNew){
     console.log(`Scan: ${path}/${ext}}`);
@@ -77,7 +77,7 @@ async function startRename(){
             type: 'confirm',
             name: 'value',
             message: 'Finish execution?',
-            initial: false,
+            initial: true,
         }
     ];
 
@@ -96,7 +96,7 @@ async function startRename(){
     if(responseTextReplace.value == undefined || String(responseTextReplace.value)==='')
         return;
 
-    const responseTextNew = await prompts(inputTextReplace);
+    const responseTextNew = await prompts(inputTextNew);
 
     staticInitialDir=responseDir.value;
     staticInitialExtension=responseExt.value;
