@@ -1,5 +1,5 @@
 {
-  "name": "src",
+  "name": "main",
   "version": "1.0.0",
   "description": "apt install npm;",
   "main": "index.js",
@@ -13,14 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "child_process": "^1.0.2",
-    "file-system": "^2.2.2",
-    "fs": "^0.0.1-security",
-    "options": "^0.0.6",
-    "prompt": "^1.3.0",
-    "prompts": "^2.4.2",
-    "typescript": "^4.6.3"
-  },
-  "devDependencies": {
-    "@types/node": "^17.0.25"
+    "file-system": "^1.2.9",
+    "typescript": "^4.5.3"
   }
 }
